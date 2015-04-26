@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="splash_background">#CC0033</color>
+    <color name="backgroundColor">#65ACD9</color>
+    <color name="background">#CC0033</color>
+    <color name="background_not">#FFFFFF</color>
+    <color name="button_off">#6D6E71</color>
+    <color name="simple_background">#FFFFFF</color>
+    <color name="dim">#30000000</color>
+    <color name="dim_not">#00000000</color>
+    <color name="dim_menuback">#A0000000</color>
+
+    <color name="color1">#6D6E71</color>
+    <color name="color2">#CC0033</color>
+</resources>
