@@ -11,6 +11,7 @@ public class Detail_listview_item {
     private String timed;
     private String deliver;
     private String car;
+    private String isTest;
 
     public Detail_listview_item(String name,String price){
         this.name=name;
