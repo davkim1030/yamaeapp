@@ -93,7 +93,7 @@ public class DetailActivity extends ActionBarActivity {
                     ParseObject objects = parseObjects.get(i);
                     menuPrice[i]=objects.getString("MenuPrice");
                     menuName[i]=objects.getString("MenuName");
-                    Detail_listview_item detail_listview_item=new Detail_listview_item(menuName[i],menuPrice[i],time,isDelivery,isCar);
+                    Detail_listview_item detail_listview_item=new Detail_listview_item(menuName[i],menuPrice[i]);
                     data2.add(detail_listview_item);
                 }
                 Detail_listview_Adapter allAdapter=new Detail_listview_Adapter(getBaseContext(),R.layout.detail_listview_item,data2);
