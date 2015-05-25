@@ -3,4 +3,69 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TabHost
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainpage_tab">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3f51b5"/>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/view1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <ListView
+                    android:id="@+id/category_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:choiceMode="singleChoice"
+                    android:dividerHeight="1.5dp"
+                    android:divider="#c1c1c1"
+                    android:background="#e8eaf6"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <ListView
+                        android:id="@+id/favorite_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:choiceMode="singleChoice"
+                        android:dividerHeight="1.5dp"
+                        android:divider="#c1c1c1"
+                        android:background="#e8eaf6"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/view3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <ListView
+                        android:id="@+id/more_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:choiceMode="singleChoice"
+                        android:dividerHeight="1.5dp"
+                        android:divider="#c1c1c1"
+                        android:background="#e8eaf6"/>
+                </LinearLayout>
+
+            </FrameLayout>
+            </LinearLayout>
+        </TabHost>
 </LinearLayout>
