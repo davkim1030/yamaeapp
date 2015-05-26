@@ -21,7 +21,7 @@
 
 
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivity2"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
         </activity>
@@ -38,92 +38,83 @@
 
         <activity
             android:name=".Menu_Chicken_Activity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
+            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity"/>
+                android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
 
         <activity
             android:name=".Menu_All_Activity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
+            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity"/>
+                android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
 
         <activity
             android:name=".Menu_Dinning_Activity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
+            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity"/>
+                android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
 
         <activity
             android:name=".Menu_Drink_Activity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
+            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity"/>
+                android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
 
         <activity
             android:name=".Menu_info_Activity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
+            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity"/>
+                android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
 
         <activity
             android:name=".Menu_Night_Activity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
+            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity"/>
-        </activity>
-
-        <activity
-            android:name=".MainActivity2"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity"/>
+                android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
 
         <activity
             android:name=".ETC_Activity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
+            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity"/>
+                android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
 
         <activity
             android:name=".TestActivity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
+            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity"/>
+                android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
 
         <activity
             android:name=".DetailActivity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
+            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity"/>
+                android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
     </application>
 

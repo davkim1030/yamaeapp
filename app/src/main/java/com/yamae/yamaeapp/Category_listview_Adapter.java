@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -48,8 +49,10 @@ public class Category_listview_Adapter extends BaseAdapter {
         Category_listview_item d = data.get(position);
 
 
-        TextView name=(TextView)convertView.findViewById(R.id.menu_name);
+        TextView name=(TextView)convertView.findViewById(R.id.cate_name);
         name.setText(d.getName());
+        ImageView imageView=(ImageView)convertView.findViewById(R.id.image);
+        imageView.setImageResource(d.getId());
         return convertView;
     }
 

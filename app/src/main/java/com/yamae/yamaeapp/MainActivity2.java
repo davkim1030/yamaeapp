@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TabHost;
@@ -37,17 +38,27 @@ public class MainActivity2 extends ActionBarActivity {
 
 
         TabHost mTabHost = (TabHost)findViewById(R.id.mainpage_tab);
-      //  mTabHost=getTabHost();
+        TabHost.TabSpec spec;
+
+        ImageView tabwidget01 = new ImageView(this);
+        tabwidget01.setImageResource(R.drawable.menu_list_icon);
+        ImageView tabwidget02 = new ImageView(this);
+        tabwidget02.setImageResource(R.drawable.star_icon);
+        ImageView tabwidget03 = new ImageView(this);
+        tabwidget03.setImageResource(R.drawable.overflow_icon);
+
+
 
         mTabHost.setup();
         mTabHost.addTab(mTabHost.newTabSpec("tab_test1")
-                        .setContent(R.id.view1).setIndicator("tab_test1")
+                        .setContent(R.id.view1).setIndicator("목록")
+
         );
         mTabHost.addTab(mTabHost.newTabSpec("tab_test2")
-                        .setContent(R.id.view2).setIndicator("tab_test2")
+                        .setContent(R.id.view2).setIndicator("즐겨찾기")
         );
         mTabHost.addTab(mTabHost.newTabSpec("tab_test3")
-                        .setContent(R.id.view3).setIndicator("tab_test3")
+                        .setContent(R.id.view3).setIndicator("더보기")
         );
 
         ListView listView=(ListView)findViewById(R.id.category_list);
@@ -68,6 +79,33 @@ public class MainActivity2 extends ActionBarActivity {
 
         Category_listview_Adapter adapter = new Category_listview_Adapter(this,R.layout.category_listview_item,data);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        startActivity(new Intent(MainActivity2.this, Menu_All_Activity.class));
+                        break;
+                    case 1:
+                        startActivity(new Intent(MainActivity2.this, Menu_Dinning_Activity.class));
+                        break;
+                    case 2:
+                        startActivity(new Intent(MainActivity2.this, Menu_Chicken_Activity.class));
+                        break;
+                    case 3:
+                        startActivity(new Intent(MainActivity2.this, Menu_Night_Activity.class));
+                        break;
+                    case 4:
+                        startActivity(new Intent(MainActivity2.this, Menu_Drink_Activity.class));
+                        break;
+                    case 5:
+                        startActivity(new Intent(MainActivity2.this, ETC_Activity.class));
+                        break;
+                }
+            }
+        });
+
 
     }
 

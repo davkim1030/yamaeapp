@@ -33,7 +33,7 @@ public class SplashActivity extends ActionBarActivity {
 
     protected void dismissSplash() {
         overridePendingTransition(0, android.R.anim.fade_out);
-        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+        startActivity(new Intent(SplashActivity.this, MainActivity2.class));
         finish();
     }
 
