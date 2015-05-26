@@ -18,38 +18,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by HyunWook Kim on 2014-09-18.
+ * Created by KB Kim on 2015-05-27.
  */
-public class Menu_Drink_Activity extends ActionBarActivity {
+public class ETC_Activity extends ActionBarActivity {
+
     private ArrayList<Menu_All_List_Data> data2 = null;
     String [] restname=new String[100];
     String [] tellnum=new String[100];
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_drink);
+        setContentView(R.layout.activity_menu_chicken);
 
         //Typeface font_hanna=Typeface.createFromAsset(getAssets(),"bm_hanna.ttf");
 
         //ActionBar
         getSupportActionBar().setIcon(new ColorDrawable(0x00ffffff));  //아이콘투명
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff6bb687));   //액션바색
-        getSupportActionBar().setTitle("술집");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xffbfdb48));   //액션바색
+        getSupportActionBar().setTitle("기타");
+
 
 
 
 
         final ListView listview = (ListView) findViewById(R.id.all_list);
         final ProgressBar progressBar=(ProgressBar)findViewById(R.id.progressbar);
+
         progressBar.setVisibility(View.VISIBLE);
         Thread thread=new Thread(new Runnable() {
             @Override
             public void run() {
                 data2 = new ArrayList<Menu_All_List_Data>();
                 final ParseQuery<ParseObject> query=new ParseQuery<ParseObject>("RestName");
-                query.whereContains("Category","4");
+                query.whereContains("Category","5");
                 query.addAscendingOrder("RestName");
                 query.orderByAscending("RestName");
                 query.findInBackground(new FindCallback<ParseObject>() {
@@ -77,7 +79,7 @@ public class Menu_Drink_Activity extends ActionBarActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent detail1=new Intent(Menu_Drink_Activity.this, TestActivity.class);
+                Intent detail1=new Intent(ETC_Activity.this, TestActivity.class);
                 detail1.putExtra("restname",restname[position]);
                 detail1.putExtra("tellnum",tellnum[position]);
                 startActivity(detail1);

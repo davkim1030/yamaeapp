@@ -7,6 +7,7 @@ package com.yamae.yamaeapp;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Window;
 import android.widget.TabHost;
 
 public class MainActivity2 extends ActionBarActivity {
@@ -14,6 +15,7 @@ public class MainActivity2 extends ActionBarActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
 
         getSupportActionBar().setIcon(new ColorDrawable(0x00ffffff));  //아이콘투명

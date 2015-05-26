@@ -2,6 +2,7 @@ package com.yamae.yamaeapp;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
@@ -40,7 +41,7 @@ public class TestActivity extends ActionBarActivity {
         final String []menuPrice=new String[100];
         final String []menuName=new String[100];
         String restname=intent.getStringExtra("restname");
-        String tellnum=intent.getStringExtra("tellnum");
+        final String tellnum=intent.getStringExtra("tellnum");
         final boolean[] isdelivery = {true};
         final boolean[] iscar = {true};
 
@@ -53,8 +54,6 @@ public class TestActivity extends ActionBarActivity {
         getSupportActionBar().setTitle(restname);
         setContentView(R.layout.activity_test);
 
-        TextView storeName=(TextView)findViewById(R.id.StoreName);
-        TextView storeTel=(TextView)findViewById(R.id.StoreTel);
         Button callButton=(Button)findViewById(R.id.callBut);
 
         final TextView time=(TextView)findViewById(R.id.Time);
@@ -62,8 +61,16 @@ public class TestActivity extends ActionBarActivity {
         final TextView isCar=(TextView)findViewById(R.id.isCar);
         final ListView detail_list=(ListView)findViewById(R.id.detail_list);
 
-        storeName.setText(restname);
         callButton.setText(tellnum);
+
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse(tellnum));
+                callIntent.setData(Uri.parse("tel:"+tellnum));
+                startActivity(callIntent);
+            }
+        });
 
         ParseQuery<ParseObject> tell=ParseQuery.getQuery("RestName");
         tell.whereContains("RestName",restname);

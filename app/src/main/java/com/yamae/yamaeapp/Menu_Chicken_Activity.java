@@ -14,6 +14,8 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import junit.framework.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,7 +80,7 @@ public class Menu_Chicken_Activity extends ActionBarActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent detail1=new Intent(Menu_Chicken_Activity.this, DetailActivity.class);
+                Intent detail1=new Intent(Menu_Chicken_Activity.this, TestActivity.class);
                 detail1.putExtra("restname",restname[position]);
                 detail1.putExtra("tellnum",tellnum[position]);
                 startActivity(detail1);
