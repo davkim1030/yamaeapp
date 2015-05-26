@@ -25,8 +25,6 @@ import java.util.List;
 
 public class MainActivity2 extends ActionBarActivity {
 
-    //private ArrayList<Category_listview_item> data2 = null;
-    String [] catename=new String[100];
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,37 +50,25 @@ public class MainActivity2 extends ActionBarActivity {
                         .setContent(R.id.view3).setIndicator("tab_test3")
         );
 
+        ListView listView=(ListView)findViewById(R.id.category_list);
+        ArrayList<Category_listview_item> data=new ArrayList<Category_listview_item>();
+        Category_listview_item all=new Category_listview_item(R.drawable.all_icon,"모든메뉴");
+        Category_listview_item dinning=new Category_listview_item(R.drawable.dinning_icon,"식당");
+        Category_listview_item chicken=new Category_listview_item(R.drawable.chicken_icon,"치킨");
+        Category_listview_item night=new Category_listview_item(R.drawable.night_icon,"야식");
+        Category_listview_item drink=new Category_listview_item(R.drawable.drink_icon,"술집");
+        Category_listview_item etc=new Category_listview_item(R.drawable.etc_icon,"기타");
 
-        final ListView listview = (ListView) findViewById(R.id.category_list);
-        //data2 = new ArrayList<Category_listview_item>();
-        Thread thread=new Thread(new Runnable() {
-            @Override
-            public void run() {
-                catename[0]="모든 메뉴";
-                catename[1]="식사";
-                catename[2]="치킨";
-                catename[3]="야식";
-                catename[4]="술집";
-                catename[5]="기타";
+        data.add(all);
+        data.add(dinning);
+        data.add(chicken);
+        data.add(night);
+        data.add(drink);
+        data.add(etc);
 
-            }
-        });
-        thread.start();
+        Category_listview_Adapter adapter = new Category_listview_Adapter(this,R.layout.category_listview_item,data);
+        listView.setAdapter(adapter);
 
-
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent detail1=new Intent(MainActivity2.this, Menu_All_Activity.class);
-                startActivity(detail1);
-                Intent detail2=new Intent(MainActivity2.this, Menu_Dinning_Activity.class);
-                startActivity(detail2);
-            }
-        });
     }
-
-
-
-
 
 }

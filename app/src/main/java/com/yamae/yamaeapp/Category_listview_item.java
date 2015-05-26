@@ -6,13 +6,16 @@ package com.yamae.yamaeapp;
 public class Category_listview_item {
 
     private String name;
+    private int id;
 
-    public Category_listview_item(String name){
+    public Category_listview_item(int id, String name){
         this.name=name;
+        this.id=id;
 
     }
     public String getName(){
         return name;
     }
+    public int getId() { return id; }
 
 }
