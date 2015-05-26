@@ -10,7 +10,7 @@
     android:paddingTop="2dp">
 
     <TextView
-        android:id="@+id/restaurant_name"
+        android:id="@+id/rest_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

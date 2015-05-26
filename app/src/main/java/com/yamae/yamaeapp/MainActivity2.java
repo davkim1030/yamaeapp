@@ -4,6 +4,7 @@ package com.yamae.yamaeapp;
  * Created by KB Kim on 2015-05-24.
  */
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.TabHost;
@@ -14,6 +15,12 @@ public class MainActivity2 extends ActionBarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_mainpage);
+
+        getSupportActionBar().setIcon(new ColorDrawable(0x00ffffff));  //아이콘투명
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xe8eaf6));   //액션바색
+        getSupportActionBar().setTitle("야식 of 매지리");
+
 
         TabHost mTabHost = (TabHost)findViewById(R.id.mainpage_tab);
       //  mTabHost=getTabHost();

@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/call_icon"/>
+            android:src="@drawable/phone_icon"/>
         <Button
             android:id="@+id/callButton"
             android:layout_width="wrap_content"
@@ -47,6 +47,7 @@
             android:layout_height="0dp"
             android:weightSum="2">
             <TextView
+                android:id="@+id/Time"
                 android:gravity="center"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -62,6 +63,7 @@
             android:layout_height="0dp"
             android:weightSum="2">
             <TextView
+                android:id="@+id/isDelivery"
                 android:text="Deliver"
                 android:textColor="#ffffff"
                 android:textSize="20sp"
@@ -70,6 +72,7 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"/>
             <TextView
+                android:id="@+id/isCar"
                 android:text="Car"
                 android:textColor="#ffffff"
                 android:textSize="20sp"
