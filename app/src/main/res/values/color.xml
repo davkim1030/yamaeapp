@@ -7,6 +7,7 @@
     <color name="button_off">#6D6E71</color>
     <color name="simple_background">#FFFFFF</color>
     <color name="dim">#30000000</color>
+    <color name="main">#3f51b5</color>
     <color name="dim_not">#00000000</color>
     <color name="dim_menuback">#A0000000</color>
 
