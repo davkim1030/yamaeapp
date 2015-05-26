@@ -29,24 +29,19 @@ public class Menu_Chicken_Activity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_chicken);
-
-        //Typeface font_hanna=Typeface.createFromAsset(getAssets(),"bm_hanna.ttf");
+        setContentView(R.layout.activity_rest_list);
 
         //ActionBar
         getSupportActionBar().setIcon(new ColorDrawable(0x00ffffff));  //아이콘투명
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xffbfdb48));   //액션바색
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff3f51b5));   //액션바색
         getSupportActionBar().setTitle("치킨");
-
-
-
 
 
         final ListView listview = (ListView) findViewById(R.id.all_list);
         final ProgressBar progressBar=(ProgressBar)findViewById(R.id.progressbar);
 
-        progressBar.setVisibility(View.VISIBLE);
+
         Thread thread=new Thread(new Runnable() {
             @Override
             public void run() {
@@ -69,7 +64,6 @@ public class Menu_Chicken_Activity extends ActionBarActivity {
                         }
                         Menu_All_Adapter allAdapter=new Menu_All_Adapter(getBaseContext(),R.layout.all_listview_item,data2);
                         listview.setAdapter(allAdapter);
-                        progressBar.setVisibility(View.GONE);
                     }
                 });
             }
