@@ -116,7 +116,7 @@ ADDED from AndroidManifest.xml:78:9
 		ADDED from AndroidManifest.xml:80:13
 	android:name
 		ADDED from AndroidManifest.xml:79:13
-activity#com.yamae.yamaeapp.DetailActivity
+activity#com.yamae.yamaeapp.MainActivity2
 ADDED from AndroidManifest.xml:87:9
 	android:screenOrientation
 		ADDED from AndroidManifest.xml:90:13
@@ -124,6 +124,14 @@ ADDED from AndroidManifest.xml:87:9
 		ADDED from AndroidManifest.xml:89:13
 	android:name
 		ADDED from AndroidManifest.xml:88:13
+activity#com.yamae.yamaeapp.DetailActivity
+ADDED from AndroidManifest.xml:96:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:99:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:98:13
+	android:name
+		ADDED from AndroidManifest.xml:97:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:support-v4:20.0.0:16:5

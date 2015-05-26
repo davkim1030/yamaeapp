@@ -94,6 +94,15 @@
         </activity>
 
         <activity
+            android:name=".TestActivity"
+            android:parentActivityName="com.yamae.yamaeapp.MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.yamae.yamaeapp.MainActivity"/>
+        </activity>
+
+        <activity
             android:name=".DetailActivity"
             android:parentActivityName="com.yamae.yamaeapp.MainActivity"
             android:screenOrientation="portrait">

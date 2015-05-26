@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -40,7 +41,6 @@ public class TestActivity extends ActionBarActivity {
         final String []menuName=new String[100];
         String restname=intent.getStringExtra("restname");
         String tellnum=intent.getStringExtra("tellnum");
-        int storenum = 0;
         final boolean[] isdelivery = {true};
         final boolean[] iscar = {true};
 
@@ -53,13 +53,17 @@ public class TestActivity extends ActionBarActivity {
         getSupportActionBar().setTitle(restname);
         setContentView(R.layout.activity_test);
 
-        TextView storeTel=(TextView)findViewById(R.id.callButton);
+        TextView storeName=(TextView)findViewById(R.id.StoreName);
+        TextView storeTel=(TextView)findViewById(R.id.StoreTel);
+        Button callButton=(Button)findViewById(R.id.callBut);
+
         final TextView time=(TextView)findViewById(R.id.Time);
         final TextView isDelivery=(TextView)findViewById(R.id.isDelivery);
         final TextView isCar=(TextView)findViewById(R.id.isCar);
-        final ListView detail_list=(ListView)findViewById(R.id.detail_lsit);
+        final ListView detail_list=(ListView)findViewById(R.id.detail_list);
 
-        storeTel.setText(tellnum);
+        storeName.setText(restname);
+        callButton.setText(tellnum);
 
         ParseQuery<ParseObject> tell=ParseQuery.getQuery("RestName");
         tell.whereContains("RestName",restname);

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -53,10 +54,11 @@ public class DetailActivity extends ActionBarActivity {
 
         TextView storeName=(TextView)findViewById(R.id.StoreName);
         TextView storeTel=(TextView)findViewById(R.id.StoreTel);
+
         final TextView time=(TextView)findViewById(R.id.Time);
         final TextView isDelivery=(TextView)findViewById(R.id.isDelivery);
         final TextView isCar=(TextView)findViewById(R.id.isCar);
-        final ListView detail_list=(ListView)findViewById(R.id.detail_lsit);
+        final ListView detail_list=(ListView)findViewById(R.id.detail_list);
 
         storeName.setText(restname);
         storeTel.setText(tellnum);
@@ -102,5 +104,6 @@ public class DetailActivity extends ActionBarActivity {
         });
 
     }
+
 
 }

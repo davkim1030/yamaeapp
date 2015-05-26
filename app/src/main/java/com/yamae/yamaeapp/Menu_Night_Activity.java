@@ -76,7 +76,7 @@ public class Menu_Night_Activity extends ActionBarActivity{
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent detail1=new Intent(Menu_Night_Activity.this, DetailActivity.class);
+                Intent detail1=new Intent(Menu_Night_Activity.this,TestActivity.class);
                 detail1.putExtra("restname",restname[position]);
                 detail1.putExtra("tellnum",tellnum[position]);
                 startActivity(detail1);
