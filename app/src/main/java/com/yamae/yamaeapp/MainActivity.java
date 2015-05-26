@@ -24,6 +24,7 @@ public class MainActivity extends ActionBarActivity {
         Button button3 = (Button) findViewById(R.id.button_chicken);
         Button button4 = (Button) findViewById(R.id.button_night);
         Button button5 = (Button) findViewById(R.id.button_drink);
+        Button button6 = (Button) findViewById(R.id.button_info);
         Button button7 = (Button) findViewById(R.id.button_etc);
 
 
@@ -64,6 +65,14 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v){
                 Intent menu_drink = new Intent(MainActivity.this, Menu_Drink_Activity.class);
                 startActivity(menu_drink);
+            }
+        });
+
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent menu_info = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(menu_info);
             }
         });
 

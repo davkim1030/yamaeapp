@@ -4,15 +4,29 @@ package com.yamae.yamaeapp;
  * Created by KB Kim on 2015-05-24.
  */
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TabHost;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity2 extends ActionBarActivity {
 
-
+    //private ArrayList<Category_listview_item> data2 = null;
+    String [] catename=new String[100];
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +42,6 @@ public class MainActivity2 extends ActionBarActivity {
       //  mTabHost=getTabHost();
 
         mTabHost.setup();
-        /*TabHost.TabSpec firstTabSpec = mTabHost.newTabSpec("tid1");
-        TabHost.TabSpec secondTabSpec = mTabHost.newTabSpec("tid1");
-        TabHost.TabSpec thirdTabSpec = mTabHost.newTabSpec("tid1");
-
-        firstTabSpec.setIndicator("",getResources().getDrawable(R.drawable.menu_list_icon));
-        secondTabSpec.setIndicator("",getResources().getDrawable(R.drawable.star_icon));
-        thirdTabSpec.setIndicator("",getResources().getDrawable(R.drawable. overflow_icon));*/
         mTabHost.addTab(mTabHost.newTabSpec("tab_test1")
                         .setContent(R.id.view1).setIndicator("tab_test1")
         );
@@ -45,6 +52,37 @@ public class MainActivity2 extends ActionBarActivity {
                         .setContent(R.id.view3).setIndicator("tab_test3")
         );
 
+
+        final ListView listview = (ListView) findViewById(R.id.category_list);
+        //data2 = new ArrayList<Category_listview_item>();
+        Thread thread=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                catename[0]="모든 메뉴";
+                catename[1]="식사";
+                catename[2]="치킨";
+                catename[3]="야식";
+                catename[4]="술집";
+                catename[5]="기타";
+
+            }
+        });
+        thread.start();
+
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent detail1=new Intent(MainActivity2.this, Menu_All_Activity.class);
+                startActivity(detail1);
+                Intent detail2=new Intent(MainActivity2.this, Menu_Dinning_Activity.class);
+                startActivity(detail2);
+            }
+        });
     }
+
+
+
+
 
 }
