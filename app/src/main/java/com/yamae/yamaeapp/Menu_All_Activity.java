@@ -44,12 +44,12 @@ public class Menu_All_Activity extends ActionBarActivity  {
 //        progressBar.setVisibility(View.VISIBLE);
 
 
-        final int[] temp = new int[1];
+        //final int[] temp = new int[1];
 
         data2 = new ArrayList<Menu_All_List_Data>();
-        Menu_All_List_Data random=new Menu_All_List_Data("랜덤",tellnum[1],1);
+        //Menu_All_List_Data random=new Menu_All_List_Data("랜덤",tellnum[1],1);
 
-        data2.add(random);
+        //data2.add(random);
         Thread thread=new Thread(new Runnable() {
             @Override
             public void run() {
@@ -59,15 +59,15 @@ public class Menu_All_Activity extends ActionBarActivity  {
                 query.findInBackground(new FindCallback<ParseObject>() {
                     @Override
                     public void done(List<ParseObject> parseObjects, ParseException e) {
-                        int i = 1;
-                        for(i=1;i<parseObjects.size();i++) {
-                            ParseObject parseObject = parseObjects.get(i-1);
+                        int i = 0;
+                        for(i=0;i<parseObjects.size();i++) {
+                            ParseObject parseObject = parseObjects.get(i);
                             restname[i]=parseObject.getString("RestName");
                             tellnum[i]=parseObject.getString("TelNum");
                             restnum=parseObject.getInt("Num");
                             Menu_All_List_Data data=new Menu_All_List_Data(restname[i],tellnum[i],restnum);
                             data2.add(data);
-                            temp[0] = parseObjects.size();
+                            //temp[0] = parseObjects.size();
 
                         }
 
@@ -86,11 +86,11 @@ public class Menu_All_Activity extends ActionBarActivity  {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 double rand  = Math.random();
-                int randn = (int) (rand*temp[0])+1;
+                //int randn = (int) (rand*temp[0])+1;
 
-                Menu_All_List_Data random=new Menu_All_List_Data(restname[randn],tellnum[randn],randn);
+                //Menu_All_List_Data random=new Menu_All_List_Data(restname[randn],tellnum[randn],randn);
 
-                data2.add(random);
+                //data2.add(random);
 
                 Intent detail1=new Intent(Menu_All_Activity.this, TestActivity.class);
                 detail1.putExtra("restname",restname[position]);
