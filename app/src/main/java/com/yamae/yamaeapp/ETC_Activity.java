@@ -25,6 +25,7 @@ public class ETC_Activity extends ActionBarActivity {
     private ArrayList<Menu_All_List_Data> data2 = null;
     String [] restname=new String[100];
     String [] tellnum=new String[100];
+    private int restnum=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +63,8 @@ public class ETC_Activity extends ActionBarActivity {
                             ParseObject parseObject = parseObjects.get(i);
                             restname[i]=parseObject.getString("RestName");
                             tellnum[i]=parseObject.getString("TelNum");
-                            Menu_All_List_Data data=new Menu_All_List_Data(restname[i],tellnum[i]);
+                            restnum=parseObject.getInt("Num");
+                            Menu_All_List_Data data=new Menu_All_List_Data(restname[i],tellnum[i],restnum);
                             data2.add(data);
 
                         }

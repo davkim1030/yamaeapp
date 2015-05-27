@@ -3,13 +3,12 @@ package com.yamae.yamaeapp;
 /**
  * Created by KB Kim on 2015-05-27.
  */
-public class Category_listview_item {
+public class More_listview_item {
 
     private String name;
     private int id;
 
-
-    public Category_listview_item(int id, String name){
+    public More_listview_item(int id, String name){
         this.name=name;
         this.id=id;
 
@@ -18,5 +17,6 @@ public class Category_listview_item {
         return name;
     }
     public int getId() { return id; }
+
 
 }

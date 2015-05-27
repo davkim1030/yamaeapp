@@ -22,11 +22,12 @@ import java.util.List;
 /**
  * Created by HyunWook Kim on 2014-09-18.
  */
-public class Menu_All_Activity extends ActionBarActivity {
+public class Menu_All_Activity extends ActionBarActivity  {
 
     private ArrayList<Menu_All_List_Data> data2 = null;
     String [] restname=new String[100];
     String [] tellnum=new String[100];
+    int restnum=0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +39,17 @@ public class Menu_All_Activity extends ActionBarActivity {
         getSupportActionBar().setTitle("모든메뉴");
 
         final ListView listview = (ListView) findViewById(R.id.all_list);
+
         final ProgressBar progressBar=(ProgressBar)findViewById(R.id.progressbar);
 //        progressBar.setVisibility(View.VISIBLE);
+
+
+        final int[] temp = new int[1];
+
         data2 = new ArrayList<Menu_All_List_Data>();
+        Menu_All_List_Data random=new Menu_All_List_Data("랜덤",tellnum[1],1);
+
+        data2.add(random);
         Thread thread=new Thread(new Runnable() {
             @Override
             public void run() {
@@ -50,14 +59,19 @@ public class Menu_All_Activity extends ActionBarActivity {
                 query.findInBackground(new FindCallback<ParseObject>() {
                     @Override
                     public void done(List<ParseObject> parseObjects, ParseException e) {
-                        int i = 0;
-                        for(i=0;i<parseObjects.size();i++) {
-                            ParseObject parseObject = parseObjects.get(i);
+                        int i = 1;
+                        for(i=1;i<parseObjects.size();i++) {
+                            ParseObject parseObject = parseObjects.get(i-1);
                             restname[i]=parseObject.getString("RestName");
                             tellnum[i]=parseObject.getString("TelNum");
-                            Menu_All_List_Data data=new Menu_All_List_Data(restname[i],tellnum[i]);
+                            restnum=parseObject.getInt("Num");
+                            Menu_All_List_Data data=new Menu_All_List_Data(restname[i],tellnum[i],restnum);
                             data2.add(data);
+                            temp[0] = parseObjects.size();
+
                         }
+
+
                         Menu_All_Adapter allAdapter=new Menu_All_Adapter(getBaseContext(),R.layout.all_listview_item,data2);
                         listview.setAdapter(allAdapter);
 //                        progressBar.setVisibility(View.GONE);
@@ -71,6 +85,13 @@ public class Menu_All_Activity extends ActionBarActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                double rand  = Math.random();
+                int randn = (int) (rand*temp[0])+1;
+
+                Menu_All_List_Data random=new Menu_All_List_Data(restname[randn],tellnum[randn],randn);
+
+                data2.add(random);
+
                 Intent detail1=new Intent(Menu_All_Activity.this, TestActivity.class);
                 detail1.putExtra("restname",restname[position]);
                 detail1.putExtra("tellnum",tellnum[position]);
@@ -78,6 +99,8 @@ public class Menu_All_Activity extends ActionBarActivity {
             }
         });
     }
+
+
 
 
 }

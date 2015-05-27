@@ -38,14 +38,13 @@ public class MainActivity2 extends ActionBarActivity {
 
 
         TabHost mTabHost = (TabHost)findViewById(R.id.mainpage_tab);
-        TabHost.TabSpec spec;
 
-        ImageView tabwidget01 = new ImageView(this);
-        tabwidget01.setImageResource(R.drawable.menu_list_icon);
-        ImageView tabwidget02 = new ImageView(this);
-        tabwidget02.setImageResource(R.drawable.star_icon);
-        ImageView tabwidget03 = new ImageView(this);
-        tabwidget03.setImageResource(R.drawable.overflow_icon);
+//        ImageView tabwidget01 = new ImageView(this);
+//        tabwidget01.setImageResource(R.drawable.menu_list_icon);
+//        ImageView tabwidget02 = new ImageView(this);
+//        tabwidget02.setImageResource(R.drawable.star_icon);
+//        ImageView tabwidget03 = new ImageView(this);
+//        tabwidget03.setImageResource(R.drawable.overflow_icon);
 
 
 
@@ -60,6 +59,10 @@ public class MainActivity2 extends ActionBarActivity {
         mTabHost.addTab(mTabHost.newTabSpec("tab_test3")
                         .setContent(R.id.view3).setIndicator("더보기")
         );
+
+
+
+
 
         ListView listView=(ListView)findViewById(R.id.category_list);
         ArrayList<Category_listview_item> data=new ArrayList<Category_listview_item>();
@@ -105,6 +108,24 @@ public class MainActivity2 extends ActionBarActivity {
                 }
             }
         });
+
+
+
+
+
+
+        ListView list_view=(ListView)findViewById(R.id.more_list);
+        ArrayList<More_listview_item> data2=new ArrayList<More_listview_item>();
+        More_listview_item send=new More_listview_item(0,"정보 수정사항 보내기");
+        More_listview_item ver=new More_listview_item(1,"버젼 v1.0.0");
+        More_listview_item update=new More_listview_item(2,"2015.05.27 업데이트");
+
+        data2.add(send);
+        data2.add(ver);
+        data2.add(update);
+
+        More_listview_Adapter adapter2 = new More_listview_Adapter(this,R.layout.more_listview_item,data2);
+        list_view.setAdapter(adapter2);
 
 
     }
