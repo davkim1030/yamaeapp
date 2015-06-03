@@ -1,1 +1,2 @@
-include ':app'
+include ':image-fetcher', ':libGoogleAnalyticsServices'
+include 'app'

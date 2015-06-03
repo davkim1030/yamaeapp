@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
+import com.google.analytics.tracking.android.EasyTracker;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -99,7 +100,16 @@ public class Menu_All_Activity extends ActionBarActivity  {
         });
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);  // Add this method.
+    }
 
 
 }
