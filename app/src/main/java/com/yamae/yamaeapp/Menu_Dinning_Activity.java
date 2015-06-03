@@ -44,7 +44,7 @@ public class Menu_Dinning_Activity extends ActionBarActivity {
 
         final ListView listview = (ListView) findViewById(R.id.all_list);
         final ProgressBar progressBar=(ProgressBar)findViewById(R.id.progressbar);
-//        progressBar.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(ProgressBar.VISIBLE);
         Thread thread=new Thread(new Runnable() {
             @Override
             public void run() {
@@ -68,7 +68,7 @@ public class Menu_Dinning_Activity extends ActionBarActivity {
                         }
                         Menu_All_Adapter allAdapter=new Menu_All_Adapter(getBaseContext(),R.layout.all_listview_item,data2);
                         listview.setAdapter(allAdapter);
-  //                      progressBar.setVisibility(View.GONE);
+                        progressBar.setVisibility(ProgressBar.GONE);
                     }
                 });
             }

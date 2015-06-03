@@ -42,6 +42,7 @@ public class Menu_Chicken_Activity extends ActionBarActivity {
         final ListView listview = (ListView) findViewById(R.id.all_list);
         final ProgressBar progressBar=(ProgressBar)findViewById(R.id.progressbar);
 
+        progressBar.setVisibility(ProgressBar.VISIBLE);
 
         Thread thread=new Thread(new Runnable() {
             @Override
@@ -66,6 +67,7 @@ public class Menu_Chicken_Activity extends ActionBarActivity {
                         }
                         Menu_All_Adapter allAdapter=new Menu_All_Adapter(getBaseContext(),R.layout.all_listview_item,data2);
                         listview.setAdapter(allAdapter);
+                        progressBar.setVisibility(ProgressBar.GONE);
                     }
                 });
             }
