@@ -72,14 +72,6 @@
                 android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
 
-        <activity
-            android:name=".Menu_info_Activity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity2"/>
-        </activity>
 
         <activity
             android:name=".Menu_Night_Activity"
@@ -100,7 +92,7 @@
         </activity>
 
         <activity
-            android:name=".TestActivity"
+            android:name=".DetailpageActivity"
             android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
             android:screenOrientation="portrait">
             <meta-data
@@ -108,14 +100,7 @@
                 android:value="com.yamae.yamaeapp.MainActivity2"/>
         </activity>
 
-        <activity
-            android:name=".DetailActivity"
-            android:parentActivityName="com.yamae.yamaeapp.MainActivity2"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yamae.yamaeapp.MainActivity2"/>
-        </activity>
+
     </application>
 
 </manifest>

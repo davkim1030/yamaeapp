@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.parse.FindCallback;
@@ -24,7 +22,7 @@ import java.util.List;
 /**
  * Created by KB Kim on 2015-04-26.
  */
-public class TestActivity extends ActionBarActivity {
+public class DetailpageActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -52,7 +50,7 @@ public class TestActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff3f51b5));   //액션바색
         getSupportActionBar().setTitle(restname);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_detailpage);
 
         Button callButton=(Button)findViewById(R.id.callBut);
 

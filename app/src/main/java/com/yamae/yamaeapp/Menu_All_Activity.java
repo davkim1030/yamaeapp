@@ -3,7 +3,6 @@ package com.yamae.yamaeapp;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.preference.Preference;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -92,7 +91,7 @@ public class Menu_All_Activity extends ActionBarActivity  {
 
                 //data2.add(random);
 
-                Intent detail1=new Intent(Menu_All_Activity.this, TestActivity.class);
+                Intent detail1=new Intent(Menu_All_Activity.this, DetailpageActivity.class);
                 detail1.putExtra("restname",restname[position]);
                 detail1.putExtra("tellnum",tellnum[position]);
                 startActivity(detail1);
