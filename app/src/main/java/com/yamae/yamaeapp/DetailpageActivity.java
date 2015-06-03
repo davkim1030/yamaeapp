@@ -19,9 +19,6 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by KB Kim on 2015-04-26.
- */
 public class DetailpageActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -65,7 +62,7 @@ public class DetailpageActivity extends ActionBarActivity {
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse(tellnum));
+                Intent callIntent = new Intent(Intent.ACTION_DIAL, Uri.parse(tellnum));
                 callIntent.setData(Uri.parse("tel:"+tellnum));
                 startActivity(callIntent);
             }
