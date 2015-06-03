@@ -32,7 +32,6 @@ public class MainActivity2 extends ActionBarActivity {
         setContentView(R.layout.activity_mainpage);
 
         getSupportActionBar().setIcon(new ColorDrawable(0x00ffffff));  //아이콘투명
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff3f51b5));   //액션바색
         getSupportActionBar().setTitle("야식 of 매지리");
 
@@ -50,14 +49,14 @@ public class MainActivity2 extends ActionBarActivity {
 
         mTabHost.setup();
         mTabHost.addTab(mTabHost.newTabSpec("tab_test1")
-                        .setContent(R.id.view1).setIndicator("목록")
+                        .setContent(R.id.view1).setIndicator("",getResources().getDrawable(R.drawable.menu_list_icon))
 
         );
         mTabHost.addTab(mTabHost.newTabSpec("tab_test2")
-                        .setContent(R.id.view2).setIndicator("즐겨찾기")
+                        .setContent(R.id.view2).setIndicator("",getResources().getDrawable(R.drawable.star_icon))
         );
         mTabHost.addTab(mTabHost.newTabSpec("tab_test3")
-                        .setContent(R.id.view3).setIndicator("더보기")
+                        .setContent(R.id.view3).setIndicator("",getResources().getDrawable(R.drawable.overflow_icon))
         );
 
 
