@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -105,6 +106,9 @@ public class DetailpageActivity extends ActionBarActivity {
                 }
                 Detail_listview_Adapter allAdapter=new Detail_listview_Adapter(getBaseContext(),R.layout.detail_listview_item,data2);
                 detail_list.setAdapter(allAdapter);
+                if(i<2){
+                    Toast TM= Toast.makeText(getApplicationContext(),"메뉴 정보가 없습니다", Toast.LENGTH_SHORT);
+                    TM.show();}
             }
         });
 
