@@ -53,13 +53,14 @@ public class DetailpageActivity extends ActionBarActivity {
         setContentView(R.layout.activity_detailpage);
 
         Button callButton=(Button)findViewById(R.id.callBut);
+        TextView callText=(TextView)findViewById(R.id.callText);
 
         final TextView time=(TextView)findViewById(R.id.Time);
         final TextView isDelivery=(TextView)findViewById(R.id.isDelivery);
         final TextView isCar=(TextView)findViewById(R.id.isCar);
         final ListView detail_list=(ListView)findViewById(R.id.detail_list);
 
-        callButton.setText(tellnum);
+        callText.setText(tellnum);
 
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
