@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,6 +58,9 @@ public class DetailpageActivity extends ActionBarActivity {
         final TextView isDelivery=(TextView)findViewById(R.id.isDelivery);
         final TextView isCar=(TextView)findViewById(R.id.isCar);
         final ListView detail_list=(ListView)findViewById(R.id.detail_list);
+        final ProgressBar progressBar=(ProgressBar)findViewById(R.id.progressbar);
+
+        progressBar.setVisibility(ProgressBar.VISIBLE);
 
         callText.setText(tellnum);
 
@@ -106,6 +110,7 @@ public class DetailpageActivity extends ActionBarActivity {
                 }
                 Detail_listview_Adapter allAdapter=new Detail_listview_Adapter(getBaseContext(),R.layout.detail_listview_item,data2);
                 detail_list.setAdapter(allAdapter);
+                progressBar.setVisibility(ProgressBar.GONE);
                 if(i<2){
                     Toast TM= Toast.makeText(getApplicationContext(),"메뉴 정보가 없습니다", Toast.LENGTH_SHORT);
                     TM.show();}

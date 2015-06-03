@@ -97,16 +97,25 @@
         </LinearLayout>
 
     </LinearLayout>
-    <ListView
-        android:layout_gravity="center"
-        android:id="@+id/detail_list"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="7"
-        android:dividerHeight="1.5dp"
-        android:divider="#c1c1c1"
-        android:background="#e8eaf6"
-        android:choiceMode="singleChoice"/>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7">
+        <ListView
+            android:layout_gravity="center"
+            android:id="@+id/detail_list"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="1.5dp"
+            android:divider="#c1c1c1"
+            android:background="#e8eaf6"
+            android:choiceMode="singleChoice"/>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/progressbar"/>
+    </FrameLayout>
 
 </LinearLayout>
