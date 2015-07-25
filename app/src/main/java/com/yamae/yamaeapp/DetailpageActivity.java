@@ -1,10 +1,10 @@
 package com.yamae.yamaeapp;
 
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +22,7 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetailpageActivity extends ActionBarActivity {
+public class DetailpageActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -43,14 +43,18 @@ public class DetailpageActivity extends ActionBarActivity {
         final boolean[] isdelivery = {true};
         final boolean[] iscar = {true};
 
-        final ArrayList<Detail_listview_item> data2 = new ArrayList<Detail_listview_item>();
+        final ArrayList<Detail_listview_item> data2 = new ArrayList<>();
 
         final String[] time_str = new String[1];
-        getSupportActionBar().setIcon(new ColorDrawable(0x00ffffff));  //아이콘투명
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff3f51b5));   //액션바색
-        getSupportActionBar().setTitle(restname);
+
+
         setContentView(R.layout.activity_detailpage);
+
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        getSupportActionBar().setTitle(restname);
 
         Button callButton=(Button)findViewById(R.id.callBut);
         TextView callText=(TextView)findViewById(R.id.callText);
@@ -109,7 +113,7 @@ public class DetailpageActivity extends ActionBarActivity {
                     Detail_listview_item detail_listview_item=new Detail_listview_item(menuName[i],menuPrice[i]);
                     data2.add(detail_listview_item);
                 }
-                Detail_listview_Adapter allAdapter=new Detail_listview_Adapter(getBaseContext(),R.layout.detail_listview_item,data2);
+                Detail_listview_Adapter allAdapter=new Detail_listview_Adapter(getBaseContext(),R.layout.item_detail_listview,data2);
                 detail_list.setAdapter(allAdapter);
                 progressBar.setVisibility(ProgressBar.GONE);
                 if(i<2){

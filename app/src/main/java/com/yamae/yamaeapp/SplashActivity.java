@@ -9,12 +9,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Window;
 
 
 public class SplashActivity extends Activity {
-    protected final static int SPLASH_TIMEOUT = 3000; // mili-seconds
+    protected final static int SPLASH_TIMEOUT = 1500; // mili-seconds
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,24 +33,8 @@ public class SplashActivity extends Activity {
 
     protected void dismissSplash() {
         overridePendingTransition(0, android.R.anim.fade_out);
-        startActivity(new Intent(SplashActivity.this, MainActivity2.class));
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
         finish();
-    }
-
-    protected void useThread() {
-        Thread background = new Thread() {
-            public void run() {
-                try {
-                    // Thread will sleep for 5 seconds
-                    sleep(SPLASH_TIMEOUT);
-                    dismissSplash();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-
-        background.start();
     }
 
     protected void useHandler() {

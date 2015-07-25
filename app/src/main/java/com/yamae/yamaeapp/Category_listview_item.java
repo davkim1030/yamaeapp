@@ -17,6 +17,6 @@ public class Category_listview_item {
     public String getName(){
         return name;
     }
-    public int getId() { return id; }
+    public int getImage() { return id; }
 
 }

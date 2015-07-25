@@ -13,4 +13,13 @@
 
     <color name="color1">#6D6E71</color>
     <color name="color2">#CC0033</color>
+
+
+    <color name="ColorPrimary">#3f51b5</color>
+    <color name="transparent">#33000000</color>
+    <color name="ColorPrimaryDark">#283593</color>
+    <color name="tab_color">#8C9EFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="AccentColor">#FFC107</color>
+    <color name="divider">#c1c1c1</color>
 </resources>

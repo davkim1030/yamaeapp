@@ -52,7 +52,7 @@ public class Category_listview_Adapter extends BaseAdapter {
         TextView name=(TextView)convertView.findViewById(R.id.cate_name);
         name.setText(d.getName());
         ImageView imageView=(ImageView)convertView.findViewById(R.id.image);
-        imageView.setImageResource(d.getId());
+        imageView.setImageResource(d.getImage());
         return convertView;
     }
 
