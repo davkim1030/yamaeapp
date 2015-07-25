@@ -5,6 +5,7 @@ package com.yamae.yamaeapp;
  */
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,7 +13,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Window;
 
 
-public class SplashActivity extends ActionBarActivity {
+public class SplashActivity extends Activity {
     protected final static int SPLASH_TIMEOUT = 3000; // mili-seconds
 
     @Override

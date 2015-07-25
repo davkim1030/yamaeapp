@@ -5,7 +5,8 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3f51b5">
+    android:background="#3f51b5"
+    android:fitsSystemWindows="true">
 
     <ImageView
         android:id="@+id/splash"
